@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Schema for ETL Configuration File -->
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="ETLconfiguration">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="connections">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element maxOccurs="unbounded" name="connection">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="alias" type="xs:string" />
+                    <xs:element name="driver" type="xs:string" />
+                    <xs:element name="url" type="xs:string" />
+                    <xs:element name="url_driver" type="xs:string" />
+                    <xs:element name="user" type="xs:string" />
+                    <xs:element name="password" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="sources">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element maxOccurs="unbounded" name="source">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="connection" type="xs:string" />
+                    <xs:element name="domain" type="xs:string" />
+                    <xs:element name="table" type="xs:string" />
+                    <xs:element name="attributes">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="id" type="xs:string" />
+                          <xs:element name="patient" type="xs:string" />
+                          <xs:element name="provider" type="xs:string" />
+                          <xs:element name="visit" type="xs:string" />
+                          <xs:element name="concept" type="xs:string" />
+                          <xs:element name="value" type="xs:string" />
+                          <xs:element name="start_date" type="xs:string" />
+                          <xs:element name="end_date" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="operations">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element maxOccurs="unbounded" name="operation">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="type" type="xs:string" />
+                    <xs:element name="id" type="xs:string" />
+                    <xs:element name="input" type="xs:string" />
+                    <xs:element name="output" type="xs:string" />
+                    <xs:element name="argument" type="xs:string" />
+                    <xs:element name="concept" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
