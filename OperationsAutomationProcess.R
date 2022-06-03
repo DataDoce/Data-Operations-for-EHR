@@ -39,8 +39,8 @@ conexiones$alias<-NULL
 conexiones$ETLconfiguration_id<-NULL
 
 ## CONEXION BBDD HCIS
-drv2 <- JDBC("oracle.jdbc.OracleDriver","D:\\Documents and Settings\\71355066G\\Escritorio\\Workbench-Build115\\ojdbc7-12.1.0.2.jar",identifier.quote="")
-conn2 <- dbConnect(drv2, "jdbc:oracle:thin:@10.35.49.17:1522:explohdoc", "EXPLOH12O", "eXP10H12O")
+drv2 <- JDBC("route",identifier.quote="")
+conn2 <- dbConnect(drv2, "database", "user", "password")
 
 ## OBTENCION DE LAS TABLAS FUENTES Y LOS ARGUMENTOS DE LAS OPERACIONES
 y<-as_list(read_xml("conn.xml"))
